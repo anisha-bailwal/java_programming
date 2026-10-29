@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Java Programming</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;background:#f5f6fa;color:#24243a}
+header{background:#fff;border-bottom:1px solid #ddd;padding:22px 7%;text-align:center}
+header h1{font-size:32px;color:#293b70;margin-bottom:7px}
+header p{color:#666;font-size:15px}
+main{max-width:1100px;margin:35px auto;padding:0 20px}
+.intro{text-align:center;margin-bottom:28px}
+.intro h2{font-size:24px;margin-bottom:9px}
+.intro p{color:#666;line-height:1.5}
+.topic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.topic-card{background:#fff;border:1px solid #ddd;border-radius:8px;padding:22px 18px;text-align:center}
+.topic-card h3{font-size:18px;margin-bottom:9px;color:#293b70}
+.topic-card p{font-size:13px;line-height:1.5;color:#666;min-height:38px;margin-bottom:15px}
+.topic-card a{display:inline-block;text-decoration:none;background:#293b70;color:white;padding:10px 18px;border-radius:5px;font-size:14px}
+.topic-card a:hover{background:#1b2850}
+footer{text-align:center;padding:24px;color:#777;font-size:12px}
+@media(max-width:750px){.topic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.topic-grid{grid-template-columns:1fr}header h1{font-size:27px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Java Programming</h1>
+  <p>Core Java Programs</p>
+</header>
+<main>
+  <section class="intro">
+    <h2>Select a Topic</h2>
+    <p>Choose a topic below to open its programs and sample outputs.</p>
+  </section>
+  <section class="topic-grid">
+    <article class="topic-card"><h3>Basic Programs</h3><p>Simple beginner Java programs.</p><a href="basic-programs.html">Open Topic</a></article>
+    <article class="topic-card"><h3>Input / Output</h3><p>Read input and display output.</p><a href="input-output.html">Open Topic</a></article>
+  
+  
+    <article class="topic-card"><h3>Arrays</h3><p>One-dimensional and two-dimensional arrays.</p><a href="arrays.html">Open Topic</a></article>
+    <article class="topic-card"><h3>Strings</h3><p>String methods and text operations.</p><a href="strings.html">Open Topic</a></article>
+    <article class="topic-card"><h3>Methods</h3><p>Methods, parameters, and return values.</p><a href="methods.html">Open Topic</a></article>
+    <article class="topic-card"><h3>Classes and Objects</h3><p>Classes, objects, and constructors.</p><a href="classes-objects.html">Open Topic</a></article>
+    <article class="topic-card"><h3>Inheritance</h3><p>Inheritance and method overriding.</p><a href="inheritance.html">Open Topic</a></article>
+    <article class="topic-card"><h3>Interfaces</h3><p>Interface declaration and implementation.</p><a href="interfaces.html">Open Topic</a></article>
+    <article class="topic-card"><h3>Abstract Classes</h3><p>Abstract classes and methods.</p><a href="abstract-classes.html">Open Topic</a></article>
+    <article class="topic-card"><h3>Exception Handling</h3><p>try, catch, finally, and throw.</p><a href="exception-handling.html">Open Topic</a></article>
+    <article class="topic-card"><h3>Packages</h3><p>Creating and using Java packages.</p><a href="packages.html">Open Topic</a></article>
+    <article class="topic-card"><h3>File Handling</h3><p>Read and write files in Java.</p><a href="file-handling.html">Open Topic</a></article>
+    <article class="topic-card"><h3>Collections</h3><p>ArrayList, HashSet, and HashMap.</p><a href="collections.html">Open Topic</a></article>
+    <article class="topic-card"><h3>Multithreading</h3><p>Threads and runnable tasks.</p><a href="multithreading.html">Open Topic</a></article>
+  
+    <article class="topic-card"><h3>Constructors</h3><p>Default and parameterized constructors.</p><a href="constructors.html">Open Topic</a></article>
+    <article class="topic-card"><h3>Operators</h3><p>Arithmetic, relational, and logical operators.</p><a href="operators.html">Open Topic</a></article>
+  </section>
+</main>
+<footer>Java Programming </footer>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strings | Java Programming</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;background:#f5f6fa;color:#24243a}
+.layout{display:flex;min-height:100vh}
+.sidebar{width:275px;flex-shrink:0;background:#fff;border-right:1px solid #ddd;padding:20px 14px;display:flex;flex-direction:column;height:100vh;position:sticky;top:0}
+.brand{padding:0 8px 16px;border-bottom:1px solid #e4e4e7}
+.brand a{color:#293b70;text-decoration:none;font-weight:bold;font-size:20px}
+.brand p{font-size:12px;color:#777;margin-top:6px}
+.sidebar h2{font-size:13px;color:#293b70;margin:18px 8px 10px}
+.program-list{list-style:none;overflow-y:auto}
+.program-list button{display:block;width:100%;text-align:left;padding:10px 9px;margin:2px 0;background:transparent;border:0;border-radius:5px;cursor:pointer;color:#555;font-size:13px;line-height:1.35}
+.program-list button:hover{background:#eef1fa;color:#293b70}
+.program-list button.active{background:#293b70;color:white}
+.content{flex:1;min-width:0;padding:30px clamp(16px,4vw,48px)}
+.topline{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid #ddd;padding-bottom:17px;margin-bottom:22px}
+.topline h1{font-size:25px;color:#293b70}
+.topline p{font-size:13px;color:#777;margin-top:6px}
+.home-link{background:#293b70;color:#fff;text-decoration:none;padding:9px 13px;border-radius:5px;font-size:13px;white-space:nowrap}
+.program-card{background:#fff;border:1px solid #ddd;border-radius:8px;margin-bottom:20px;overflow:hidden}
+.card-head{padding:20px;border-bottom:1px solid #e5e5e5}
+.card-head small{color:#777;font-weight:bold;font-size:11px;text-transform:uppercase;letter-spacing:1px}
+.card-head h2{font-size:20px;margin-top:9px}
+.card-head p{font-size:13px;color:#666;line-height:1.6;margin-top:8px}
+.code-area{padding:20px}
+.label-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:13px;font-weight:bold}
+.copy-btn{background:#eee;border:1px solid #ccc;border-radius:4px;padding:6px 10px;cursor:pointer;font-size:12px}
+pre{background:#202127;color:#f1f1f1;padding:17px;border-radius:5px;overflow:auto;font:13px/1.65 Consolas,monospace;white-space:pre}
+.output-area{padding:0 20px 20px}
+.output-area h3{font-size:13px;color:#293b70;margin-bottom:9px}
+.output{border:1px solid #ddd;background:#fafafa;padding:14px;border-radius:5px;white-space:pre-wrap;font:13px/1.6 Consolas,monospace;overflow-wrap:anywhere}
+.note{font-size:12px;color:#777;line-height:1.5;margin-top:10px}
+.empty{background:#fff;border:1px dashed #ccc;border-radius:8px;text-align:center;padding:45px 15px;color:#666}
+@media(max-width:760px){.layout{display:block}.sidebar{width:100%;height:auto;position:relative;padding:14px}.program-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px;max-height:270px}.content{padding:20px 13px}.topline h1{font-size:20px}.card-head,.code-area{padding:15px}.output-area{padding:0 15px 15px}}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+  <div class="brand"><a href="index.html">Java Programming</a><p>Core Java Practice</p></div>
+  <h2>Strings · PROGRAMS</h2>
+  <ul class="program-list" id="programList"></ul>
+</aside>
+<main class="content">
+  <div class="topline"><div><h1>Strings</h1><p>Select a program from the sidebar to view its code and output.</p></div><a class="home-link" href="index.html">Home</a></div>
+  <div id="programContent"></div>
+</main>
+</div>
+<script>
+const programs = [{"title": "Find String Length", "description": "Find the number of characters.", "code": "public class Main {\n    public static void main(String[] args) {\n        String text = \"Java Programming\";\n        System.out.println(\"Length = \" + text.length());\n    }\n}", "output": "Length = 16"}, {"title": "Convert to Uppercase", "description": "Convert a string to uppercase.", "code": "public class Main {\n    public static void main(String[] args) {\n        String text = \"Hello Java\";\n        System.out.println(text.toUpperCase());\n    }\n}", "output": "HELLO JAVA"}, {"title": "Check Palindrome String", "description": "Check whether text reads the same backward.", "code": "public class Main {\n    public static void main(String[] args) {\n        String text = \"madam\";\n        String reverse = new StringBuilder(text).reverse().toString();\n        System.out.println(text.equalsIgnoreCase(reverse) ? \"Palindrome\" : \"Not palindrome\");\n    }\n}", "output": "Palindrome"}, {"title": "Compare Two Strings", "description": "Compare string contents with equals().", "code": "public class Main {\n    public static void main(String[] args) {\n        String a = \"Java\";\n        String b = \"Java\";\n        System.out.println(a.equals(b));\n    }\n}", "output": "true"}, {"title": "Count Vowels", "description": "Count vowels in a string.", "code": "public class Main {\n    public static void main(String[] args) {\n        String text = \"education\".toLowerCase();\n        int count = 0;\n        for (int i = 0; i < text.length(); i++)\n            if (\"aeiou\".indexOf(text.charAt(i)) >= 0) count++;\n        System.out.println(\"Vowels = \" + count);\n    }\n}", "output": "Vowels = 5"}, {"title": "Strings Practice Program 6", "description": "Practice exercise 6 for the Strings topic. Replace this sample entry with your college question when ready.", "code": "public class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Strings - Practice Program 6\");\n    }\n}", "output": "Strings - Practice Program 6", "note": "This is a starter example. Replace it with the exact program statement from your syllabus."}, {"title": "Strings Practice Program 7", "description": "Practice exercise 7 for the Strings topic. Replace this sample entry with your college question when ready.", "code": "public class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Strings - Practice Program 7\");\n    }\n}", "output": "Strings - Practice Program 7", "note": "This is a starter example. Replace it with the exact program statement from your syllabus."}, {"title": "Strings Practice Program 8", "description": "Practice exercise 8 for the Strings topic. Replace this sample entry with your college question when ready.", "code": "public class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Strings - Practice Program 8\");\n    }\n}", "output": "Strings - Practice Program 8", "note": "This is a starter example. Replace it with the exact program statement from your syllabus."}, {"title": "Strings Practice Program 9", "description": "Practice exercise 9 for the Strings topic. Replace this sample entry with your college question when ready.", "code": "public class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Strings - Practice Program 9\");\n    }\n}", "output": "Strings - Practice Program 9", "note": "This is a starter example. Replace it with the exact program statement from your syllabus."}, {"title": "Strings Practice Program 10", "description": "Practice exercise 10 for the Strings topic. Replace this sample entry with your college question when ready.", "code": "public class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Strings - Practice Program 10\");\n    }\n}", "output": "Strings - Practice Program 10", "note": "This is a starter example. Replace it with the exact program statement from your syllabus."}, {"title": "Strings Practice Program 11", "description": "Practice exercise 11 for the Strings topic. Replace this sample entry with your college question when ready.", "code": "public class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Strings - Practice Program 11\");\n    }\n}", "output": "Strings - Practice Program 11", "note": "This is a starter example. Replace it with the exact program statement from your syllabus."}, {"title": "Strings Practice Program 12", "description": "Practice exercise 12 for the Strings topic. Replace this sample entry with your college question when ready.", "code": "public class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Strings - Practice Program 12\");\n    }\n}", "output": "Strings - Practice Program 12", "note": "This is a starter example. Replace it with the exact program statement from your syllabus."}, {"title": "Strings Practice Program 13", "description": "Practice exercise 13 for the Strings topic. Replace this sample entry with your college question when ready.", "code": "public class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Strings - Practice Program 13\");\n    }\n}", "output": "Strings - Practice Program 13", "note": "This is a starter example. Replace it with the exact program statement from your syllabus."}, {"title": "Strings Practice Program 14", "description": "Practice exercise 14 for the Strings topic. Replace this sample entry with your college question when ready.", "code": "public class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Strings - Practice Program 14\");\n    }\n}", "output": "Strings - Practice Program 14", "note": "This is a starter example. Replace it with the exact program statement from your syllabus."}, {"title": "Strings Practice Program 15", "description": "Practice exercise 15 for the Strings topic. Replace this sample entry with your college question when ready.", "code": "public class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Strings - Practice Program 15\");\n    }\n}", "output": "Strings - Practice Program 15", "note": "This is a starter example. Replace it with the exact program statement from your syllabus."}, {"title": "Strings Practice Program 16", "description": "Practice exercise 16 for the Strings topic. Replace this sample entry with your college question when ready.", "code": "public class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Strings - Practice Program 16\");\n    }\n}", "output": "Strings - Practice Program 16", "note": "This is a starter example. Replace it with the exact program statement from your syllabus."}, {"title": "Strings Practice Program 17", "description": "Practice exercise 17 for the Strings topic. Replace this sample entry with your college question when ready.", "code": "public class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Strings - Practice Program 17\");\n    }\n}", "output": "Strings - Practice Program 17", "note": "This is a starter example. Replace it with the exact program statement from your syllabus."}, {"title": "Strings Practice Program 18", "description": "Practice exercise 18 for the Strings topic. Replace this sample entry with your college question when ready.", "code": "public class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Strings - Practice Program 18\");\n    }\n}", "output": "Strings - Practice Program 18", "note": "This is a starter example. Replace it with the exact program statement from your syllabus."}, {"title": "Strings Practice Program 19", "description": "Practice exercise 19 for the Strings topic. Replace this sample entry with your college question when ready.", "code": "public class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Strings - Practice Program 19\");\n    }\n}", "output": "Strings - Practice Program 19", "note": "This is a starter example. Replace it with the exact program statement from your syllabus."}, {"title": "Strings Practice Program 20", "description": "Practice exercise 20 for the Strings topic. Replace this sample entry with your college question when ready.", "code": "public class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Strings - Practice Program 20\");\n    }\n}", "output": "Strings - Practice Program 20", "note": "This is a starter example. Replace it with the exact program statement from your syllabus."}];
+const list = document.getElementById("programList");
+const content = document.getElementById("programContent");
+let active = 0;
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function render(){
+  list.innerHTML = "";
+  programs.forEach((p,i)=>{
+    const li=document.createElement("li");
+    const b=document.createElement("button");
+    b.type="button"; b.className=i===active?"active":"";
+    b.textContent=(i+1)+". "+p.title;
+    b.onclick=()=>{active=i;render();};
+    li.appendChild(b);list.appendChild(li);
+  });
+  const p=programs[active];
+  content.innerHTML=`<article class="program-card">
+    <div class="card-head"><small>Program ${String(active+1).padStart(2,"0")}</small><h2>${esc(p.title)}</h2><p>${esc(p.description)}</p></div>
+    <div class="code-area"><div class="label-row"><span>Java Code</span><button class="copy-btn" id="copyCode">Copy Code</button></div><pre><code>${esc(p.code)}</code></pre></div>
+    <div class="output-area"><h3>Sample Output</h3><div class="output">${esc(p.output)}</div>${p.note?`<p class="note">Note: ${esc(p.note)}</p>`:""}</div>
+  </article>`;
+  document.getElementById("copyCode").onclick=async()=>{
+    const btn=document.getElementById("copyCode");
+    try{await navigator.clipboard.writeText(p.code);btn.textContent="Copied!";setTimeout(()=>{if(btn.isConnected)btn.textContent="Copy Code"},1200);}
+    catch(e){btn.textContent="Copy unavailable";}
+  };
+}
+render();
+</script>
+</body>
+</html>
